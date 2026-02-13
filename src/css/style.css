@@ -1,0 +1,236 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    min-height: 100vh;
+    background: radial-gradient(circle at top, #ffcb05 0%, #f44336 40%, #3b4cca 100%);
+}
+
+header {
+    background-color: #3b4cca;
+    padding: 20px;
+    text-align: center;
+    color: white;
+}
+
+.barra-busca {
+    margin-top: 15px;
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+}
+
+.barra-busca input {
+    padding: 8px;
+    width: 250px;
+    border-radius: 6px;
+    border: none;
+}
+
+.barra-busca button {
+    padding: 8px 15px;
+    border: none;
+    border-radius: 6px;
+    cursor: pointer;
+    font-weight: bold;
+}
+
+#btnBuscar {
+    background-color: #333;
+    color: white;
+}
+
+#btnVoltar {
+    background-color: #555;
+    color: white;
+}
+
+#cartoes {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
+    gap: 20px;
+    padding: 30px;
+}
+
+.cartao-pokemon {
+    border-radius: 15px;
+    padding: 15px;
+    color: white;
+    box-shadow: 0 10px 20px rgba(0,0,0,0.15);
+    transition: 0.3s;
+}
+
+.cartao-pokemon:hover {
+    transform: scale(1.05);
+}
+
+.cartao-topo {
+    display: flex;
+    flex-direction: column;
+}
+
+
+.cartao-topo img {
+    width: 140px;
+    align-self: center;
+    margin: 10px 0;
+}
+
+.detalhes {
+    display: flex;
+    justify-content: space-between;
+}
+
+.tipo {
+    align-self: flex-start;
+    margin-top: 5px;
+    padding: 4px 10px;
+    border-radius: 10px;
+    background-color: rgba(255,255,255,0.3);
+}
+
+.loader {
+    border: 6px solid #f3f3f3;
+    border-top: 6px solid #ef5350;
+    border-radius: 50%;
+    width: 50px;
+    height: 50px;
+    margin: 20px auto;
+    animation: spin 1s linear infinite;
+}
+.loader {
+    pointer-events: none;
+}
+
+@keyframes spin {
+    100% { transform: rotate(360deg); }
+}
+
+/* CORES POR TIPO */
+.tipo-fire { background-color: #F08030; }
+.tipo-water { background-color: #6890F0; }
+.tipo-grass { background-color: #78C850; }
+.tipo-electric { background-color: #F8D030; }
+.tipo-ice { background-color: #98D8D8; }
+.tipo-fighting { background-color: #C03028; }
+.tipo-poison { background-color: #A040A0; }
+.tipo-ground { background-color: #E0C068; }
+.tipo-flying { background-color: #A890F0; }
+.tipo-psychic { background-color: #F85888; }
+.tipo-bug { background-color: #A8B820; }
+.tipo-rock { background-color: #B8A038; }
+.tipo-ghost { background-color: #705898; }
+.tipo-dark { background-color: #705848; }
+.tipo-dragon { background-color: #7038F8; }
+.tipo-steel { background-color: #B8B8D0; }
+.tipo-fairy { background-color: #EE99AC; }
+.tipo-normal { background-color: #A8A878; }
+
+.modal {
+    position: fixed;
+    inset: 0;
+    background: rgba(0,0,0,0.6);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 1000;
+}
+
+.hidden {
+    display: none;
+}
+
+.modal-content {
+    width: 420px;
+    border-radius: 15px;
+    padding: 25px;
+    animation: aparecer 0.2s ease;
+    color: white;
+    text-align: center;
+    box-shadow: 0 15px 30px rgba(0,0,0,0.3);
+}
+
+#fecharModal {
+    float: right;
+    cursor: pointer;
+    font-size: 22px;
+}
+
+.modal-content img {
+    margin: 15px 0;
+}
+
+.modal-content p {
+    margin: 6px 0;
+    font-weight: bold;
+}
+
+.modal-content h2 {
+    text-transform: capitalize;
+}
+
+.btn-remover {
+    margin-top: 10px;
+    padding: 5px;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+}
+
+#filtroTipo {
+    padding: 8px;
+    border-radius: 6px;
+    border: none;
+}
+.barra-busca {
+    margin-top: 15px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+    flex-wrap: wrap;
+}
+
+#listaFiltro {
+    grid-template-columns: repeat(auto-fill, minmax(120px, 1fr));
+}
+
+#listaFiltro .cartao-pokemon {
+    padding: 10px;
+    text-align: center;
+}
+.popup-filtro {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    
+    background: rgb(85, 81, 81);
+    width: 500px;
+    max-height: 70vh;
+    overflow-y: auto;
+    
+    border-radius: 15px;
+    padding: 20px;
+    box-shadow: 0 20px 40px rgba(0,0,0,0.3);
+    z-index: 2000;
+}
+
+#listaFiltro {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(130px, 1fr));
+    gap: 15px;
+    margin-top: 15px;
+}
+
+#listaFiltro .cartao-pokemon {
+    padding: 10px;
+    text-align: center;
+    cursor: pointer;
+}
+
+
